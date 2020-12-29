@@ -11,6 +11,11 @@ class Category extends DocsModel {
     private $order;
     private $name;
     private $description;
+    private $defaultSort;
+    private $visibility;
+    private $articleCount;
+    private $publishedArticleCount;
+    private $publicUrl;
     private $createdBy;
     private $updatedBy;
     private $createdAt;
@@ -18,17 +23,22 @@ class Category extends DocsModel {
 
     function __construct($data = null) {
         if ($data) {
-            $this->id           = isset($data->id)           ? $data->id           : null;
-            $this->number       = isset($data->number)       ? $data->number       : null;
-            $this->slug         = isset($data->slug)         ? $data->slug         : null;
-            $this->collectionId = isset($data->collectionId) ? $data->collectionId : null;
-            $this->order        = isset($data->order)        ? $data->order        : null;
-            $this->name         = isset($data->name)         ? $data->name         : null;
-            $this->description  = isset($data->description)  ? $data->description  : null;
-            $this->createdBy    = isset($data->createdBy)    ? $data->createdBy    : null;
-            $this->updatedBy    = isset($data->updatedBy)    ? $data->updatedBy    : null;
-            $this->createdAt    = isset($data->createdAt)    ? $data->createdAt    : null;
-            $this->createdBy    = isset($data->updatedAt)    ? $data->updatedAt    : null;
+            $this->id                    = isset($data->id)                    ? $data->id                    : null;
+            $this->number                = isset($data->number)                ? $data->number                : null;
+            $this->slug                  = isset($data->slug)                  ? $data->slug                  : null;
+            $this->collectionId          = isset($data->collectionId)          ? $data->collectionId          : null;
+            $this->order                 = isset($data->order)                 ? $data->order                 : null;
+            $this->name                  = isset($data->name)                  ? $data->name                  : null;
+            $this->description           = isset($data->description)           ? $data->description           : null;
+            $this->defaultSort           = isset($data->defaultSort)           ? $data->defaultSort           : null;
+            $this->visibility            = isset($data->visibility)            ? $data->visibility            : null;
+            $this->articleCount          = isset($data->articleCount)          ? $data->articleCount          : null;
+            $this->publishedArticleCount = isset($data->publishedArticleCount) ? $data->publishedArticleCount : null;
+            $this->publicUrl             = isset($data->publicUrl)             ? $data->publicUrl             : null;
+            $this->createdBy             = isset($data->createdBy)             ? $data->createdBy             : null;
+            $this->updatedBy             = isset($data->updatedBy)             ? $data->updatedBy             : null;
+            $this->createdAt             = isset($data->createdAt)             ? $data->createdAt             : null;
+            $this->createdBy             = isset($data->updatedAt)             ? $data->updatedAt             : null;
         }
     }
 
@@ -126,6 +136,86 @@ class Category extends DocsModel {
     public function getDescription()
     {
       return $this->description;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDefaultSort()
+    {
+        return $this->defaultSort;
+    }
+
+    /**
+     * @param mixed $defaultSort
+     */
+    public function setDefaultSort($defaultSort)
+    {
+        $this->defaultSort = $defaultSort;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getVisibility()
+    {
+        return $this->visibility;
+    }
+
+    /**
+     * @param mixed $visibility
+     */
+    public function setVisibility($visibility)
+    {
+        $this->visibility = $visibility;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getArticleCount()
+    {
+        return $this->articleCount;
+    }
+
+    /**
+     * @param mixed $articleCount
+     */
+    public function setArticleCount($articleCount)
+    {
+        $this->articleCount = $articleCount;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPublishedArticleCount()
+    {
+        return $this->publishedArticleCount;
+    }
+
+    /**
+     * @param mixed $publishedArticleCount
+     */
+    public function setPublishedArticleCount($publishedArticleCount)
+    {
+        $this->publishedArticleCount = $publishedArticleCount;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPublicUrl()
+    {
+        return $this->publicUrl;
+    }
+
+    /**
+     * @param mixed $publicUrl
+     */
+    public function setPublicUrl($publicUrl)
+    {
+        $this->publicUrl = $publicUrl;
     }
 
     /**
